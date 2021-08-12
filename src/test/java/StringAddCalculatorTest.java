@@ -14,7 +14,7 @@ public class StringAddCalculatorTest {
     @Test
     void string_split_test() {
         StringAddCalculator stringAddCalculator = new StringAddCalculator("1:2,3");
-        assertThat(stringAddCalculator.getNumbers()).containsExactly(1,2,3);
+        assertThat(stringAddCalculator.getNumbers()).containsExactly(1, 2, 3);
     }
 
     @DisplayName("분리한 각 숫자의 합을 반환")

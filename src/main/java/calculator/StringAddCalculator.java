@@ -33,10 +33,6 @@ public class StringAddCalculator {
     public int getSum() {
         int sum = 0;
 
-        if (numbers == null) {
-            return 0;
-        }
-
         for (Integer number : numbers) {
             sum += number;
         }
