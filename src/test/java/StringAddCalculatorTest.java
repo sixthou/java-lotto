@@ -14,7 +14,7 @@ public class StringAddCalculatorTest {
     @Test
     void string_split_test() {
         StringAddCalculator stringAddCalculator = new StringAddCalculator("1:2,3");
-        assertThat(stringAddCalculator.getNumberList()).containsExactly("1", "2", "3");
+        assertThat(stringAddCalculator.getNumbers()).containsExactly(1,2,3);
     }
 
     @DisplayName("분리한 각 숫자의 합을 반환")
@@ -73,8 +73,7 @@ public class StringAddCalculatorTest {
     @DisplayName("문자열 계산기에 숫자 이외의 값 또는 음수를 전달하는 경우 RuntimeException 예외를 throw test.")
     @Test
     void not_number_string_throw_RuntimeException_test() {
-        StringAddCalculator stringAddCalculator = new StringAddCalculator("-1,2,3");
         assertThatExceptionOfType(RuntimeException.class)
-            .isThrownBy(stringAddCalculator::getSum);
+            .isThrownBy(() -> new StringAddCalculator("-1,2,3"));
     }
 }
