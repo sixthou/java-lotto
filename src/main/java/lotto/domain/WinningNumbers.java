@@ -10,7 +10,7 @@ public class WinningNumbers {
     public WinningNumbers(final List<Integer> winningNumbers, final int bonusNumber) {
         this.winningNumbers = new LottoNumbers(winningNumbers);
         this.bonusNumber = new LottoNumber(bonusNumber);
-        ValidBonusNumberDuplication();
+        validBonusNumberDuplication();
     }
 
     private int checkMatchCount(LottoNumbers lottoNumbers) {
@@ -25,7 +25,7 @@ public class WinningNumbers {
         return LottoRank.findRank(checkMatchCount(lottoNumbers), checkBonusNumber(lottoNumbers));
     }
 
-    private void ValidBonusNumberDuplication() {
+    private void validBonusNumberDuplication() {
         if (winningNumbers.contains(bonusNumber)) {
             throw new IllegalArgumentException("보너스 숫자가 당첨 숫자와 동일 합니다.");
         }

@@ -104,5 +104,5 @@ Map<Integer, Sensor> sensors = new HashMap<>();
 **Todo는 각 스탭별 docs 파일에 기록 했습니다.**
 - [step1](docs/step1.md)
 - [step2](docs/step2.md)
-- step3
-- step4
+- [step3](docs/step3.md)
+- [step4](docs/step4.md)

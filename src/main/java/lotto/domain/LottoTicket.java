@@ -24,12 +24,12 @@ public class LottoTicket {
         return Collections.unmodifiableList(tickets);
     }
 
-    public List<LottoRank> getLottoRanks(final WinningNumbers winningNumbers) {
+    public LottoResult getLottoRanks(final WinningNumbers winningNumbers) {
         List<LottoRank> lottoRanks = new ArrayList<>();
         for (LottoNumbers lottoNumbers : tickets) {
             lottoRanks.add(winningNumbers.match(lottoNumbers));
         }
-        return lottoRanks;
+        return new LottoResult(lottoRanks);
     }
 
     @Override

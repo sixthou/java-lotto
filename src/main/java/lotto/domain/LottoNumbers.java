@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 import lotto.constraint.Constraint;
 
 public class LottoNumbers {
@@ -46,10 +45,11 @@ public class LottoNumbers {
         return lottoNumbers.contains(lottoNumber);
     }
 
-
-    public String makeLottoNumbersStringList() {
-        return "["
-            + lottoNumbers.stream().map(Object::toString).collect(Collectors.joining(", "))
-            + "]";
+    public List<Integer> lottoNumbersToIntegerList() {
+        List<Integer> numbers = new ArrayList<>();
+        for (LottoNumber lottoNumber : lottoNumbers) {
+            numbers.add(Integer.valueOf(lottoNumber.toString()));
+        }
+        return numbers;
     }
 }
